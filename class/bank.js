@@ -3,7 +3,16 @@ class Bank{
     constructor(){
         this.clients = [];
         this.agencia = ["05", "06", "01", "09", "04"];
-        this.clientesContas = [];
+    }
+    adicionarCliente(nome, cpf, telefone, email, endereco){
+        let newCliente = new cliente.Cliente(nome, cpf, telefone, email, endereco,this.agencia);
+        console.log("Cliente criado:", newCliente)
+        this.clients.push(newCliente);
+    }
+     mostrartodosclientes(){
+        this.clients.forEach(e => {
+            e.mostrarDados();
+        });
     }
     
     enviar(){
@@ -21,16 +30,7 @@ class Bank{
     depositar(){
 
     }
-    mostrartodosclientes(){
-        this.clients.forEach(e => {
-        e.mostrarDados();
-        });
-    }
-    adicionarCliente(nome, cpf, telefone, email, endereco){
-        let newCliente = new cliente.Cliente(nome, cpf, telefone, email, endereco,this.agencia);
-        console.log("Cliente criado:", newCliente)
-        this.clients.push(newCliente);
-    }
+   
 }
 
 module.exports = { Bank };
