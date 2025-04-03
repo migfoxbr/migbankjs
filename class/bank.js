@@ -1,8 +1,10 @@
 const cliente = require("./client");
-class Bank{
+class Bank {
     constructor(){
         this.clients = [];
         this.agencia = ["05", "06", "01", "09", "04"];
+
+        this.numeroContas = [];
     }
     adicionarCliente(nome, cpf, telefone, email, endereco){
         let newCliente = new cliente.Cliente(nome, cpf, telefone, email, endereco,this.agencia);
@@ -14,21 +16,11 @@ class Bank{
             e.mostrarDados();
         });
     }
-    
-    enviar(){
+    adicionarSaldo(){
 
     }
-
-    receber(){
-
-    }
-    
-    sacar(){
-
-    }
-
-    depositar(){
-
+    descontarSaldo(){
+  
     }
    
 }
